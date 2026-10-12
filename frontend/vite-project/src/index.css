@@ -1,0 +1,189 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body,
+#root{
+  height:100%;
+  width:100%
+}
+
+.create-post-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.create-post-section {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  animation: fadeUp 0.6s ease;
+}
+
+.create-post-section h1 {
+  font-size: 2rem;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.create-post-section .subtitle {
+  margin: 0 0 28px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.create-post-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* File input */
+.create-post-section input[type="file"] {
+  padding: 22px 14px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-post-section input[type="file"]:hover {
+  border-color: #ff6ec4;
+  background: rgba(255, 110, 196, 0.08);
+}
+
+.create-post-section input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Caption input */
+.create-post-section input[type="text"] {
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.create-post-section input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.create-post-section input[type="text"]:focus {
+  border-color: #7873f5;
+  box-shadow: 0 0 0 4px rgba(120, 115, 245, 0.25);
+}
+
+/* Button */
+.create-post-section button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.create-post-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(120, 115, 245, 0.45);
+}
+
+.create-post-section button:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Page / feed container */
+.changeBg {
+  min-height: 100vh;
+  padding: 30px 20px;
+  background: #000000;
+  color: #f5f5f5;
+}
+
+.feed-section {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 500px;
+  background: #121212;
+  padding: 14px;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  border-color: #444444;
+  transform: translateY(-3px);
+}
+
+.post-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.post-card p {
+  color: #f5f5f5;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 14px 4px 4px;
+  overflow-wrap: anywhere;
+}
+
+.feed-section h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+}
