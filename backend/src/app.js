@@ -35,5 +35,19 @@ app.get("/get-post",async(req,res)=>{
        })
 })
 
+// DELETE /api/posts/:id
+app.delete("/get-post/:id", async (req, res) => {
+  try {
+    const deletedPost = await postModel.findByIdAndDelete(req.params.id);
+
+    if (!deletedPost) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+
+    res.status(200).json({ message: "Post deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
 
 module.exports = app;
